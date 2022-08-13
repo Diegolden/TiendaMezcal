@@ -1,0 +1,49 @@
+<app-navbar></app-navbar>
+<br>
+<!-- termina header -->
+<div class="container">
+    <div class="row">
+        <div class="tabla col-lg-12">
+            <table class="table text-center pt-1 color">
+                <thead>
+                    <tr>
+                        <th class="fila-principal" scope="col"></th>
+                        <th class="fila-principal" scope="col">PRODUCTO</th>
+                        <th class="fila-principal" scope="col">PRECIO</th>
+                        <th class="fila-principal" scope="col">CANTIDAD</th>
+                        <th class="fila-principal" scope="col">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="filas" *ngFor="let mzcl of data" align="center">
+                        <th scope="row"><img class="imagen_mezcal" src="{{mzcl.img}}" height="80px"></th>
+                        <td class="fila_letras">{{mzcl.nombre}}</td>
+                        <td class="fila_letras">{{mzcl.precio}}</td>
+                        <td class="fila_letras">1</td>
+                        <td class="fila_letras"><button class="btn btn-danger" (click)="eliminar(mzcl.id_mezcal)">X</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-lg-8"></div>
+        <div class="row col-lg-4 color">
+            <div class="total">
+                <p>TOTAL CARRITO</p>
+            </div>
+            <div class="finalizar_compra">
+                <table class="table border-0">
+                    <tbody>
+                        <tr>
+                            <th class="tabla_finalizar_compra color" scope="row">TOTAL:</th>
+                            <td class="text-white">${{precioTotal}}.00MX</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div class="d-grid gap-2 pb-1">
+                    <button type="button" class="btn btn-outline-warning" [disabled]="!boton" (click)="comprar()">Finalizar compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

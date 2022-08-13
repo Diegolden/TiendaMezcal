@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navarsito ">
+    <div class="container-fluid">
+        <a class=" navbar-brand  letra_menu text-white fs-4">Mezcales Amor Tumbado</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+            <ul class="navbar-nav mb-lg-0">
+                <li class=" d-flex nav-item">
+                    <button  class="btn btnn-dark nav-link-acive text-white fs-4" [routerLink]="['/main']">Inicio </button>
+                </li>
+                <li class=" d-flex nav-item">
+                    <button class="btn btnn-dark nav-link text-white fs-4" [routerLink]="['/productos']">Productos </button>
+                </li>
+                <li class=" d-flex nav-item">
+                    <button class="btn btnn-dark nav-link text-white fs-4" [routerLink]="['/favoritos']">Favoritos </button>
+                </li>
+                <li class=" d-flex nav-item">
+                    <button class="btn btnn-dark nav-link text-white fs-4" [routerLink]="['/carrito']">Carrito </button>
+                </li>
+                <li class=" d-flex nav-item">
+                    <button class="btn btnn-dark nav-link text-white fs-4" [routerLink]="['/compras']">Mis Compras</button>
+                </li>
+                <li  class=" d-flex nav-item">
+                    <button class=" btn btnn-dark nav-link text-white fs-4" (click)="salir()">Cerrar Sesión</button>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+</nav>

@@ -1,0 +1,118 @@
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: 0;
+        font-family: "Roboto", sans-serif;
+    }
+
+    .cent {
+        padding: 5vh;
+        padding-left: 20vh;
+        justify-content: center;
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+        background: white;
+        border-radius: 30px;
+        box-shadow: 8px 8px 53px grey;
+    }
+
+    .center {
+        display: flex;
+        justify-content: center;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+    }
+
+    .btn1 {
+        border: none;
+        outline: none;
+        height: 50px;
+        width: 100%;
+        background-color: black;
+        color: white;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+
+    .btn1:hover {
+        background-color: white;
+        border: 1px solid;
+        color: black;
+    }
+</style>
+
+<app-nav></app-nav>
+
+<section class="cent my-4 mx-4">
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-lg-5">
+                <img src="assets/img/Mezcal_body.jpeg" class="img-fluid" alt="" />
+            </div>
+            <div class="col-lg-7 px-5 pt-5">
+                <h1 class="font-weight-bold py-3">Mezcalería Maicrack</h1>
+                <h4>Ingresa tus datos para iniciar sesión</h4>
+                <div class="container">
+
+                    <br>
+
+                    <form autocomplete="off" [formGroup]="miFormulario">
+                
+                        <div class="justify-content-md-center" align="center">
+                            <div class="col-12">
+                                <label class="form-label">Email:</label>
+                                <input type="email" class="form-control" formControlName="correo"
+                                    placeholder="Ingrese su correo electronico" [pattern]="emailCheck">
+                                <div>
+                                    <span *ngIf="emailReq()" class="form-text text-danger">
+                                        Dirección de correo no válida</span>
+                                </div>
+                                <span *ngIf="emailPattern()" class="form-text text-danger">
+                                    Patrón incorrecto</span>
+                            </div>
+                        </div>
+    
+                        <div class="justify-content-md-center" align="center">
+                            <div class="col-12">
+                                <label class="form-label">Contraseña:</label>
+                                <input type="password" class="form-control" formControlName="password"
+                                    placeholder="Ingrese su contraseña">
+                                <span class="form-text text-danger" *ngIf="campoValido('password')">Mínimo 8
+                                    caracteres</span>
+                            </div>
+                        </div>
+
+                        <br>
+    
+                        <div class="text-center">
+                            <div class="col">
+                                <button type="submit" [disabled]="miFormulario.invalid" class="btn  btn-primary btn-lg"
+                                    (click)="save()">
+                                    Iniciar sesión
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <br>
+
+                        <div class="text-center">
+                            <div class="col">
+                                Aún no tienes cuenta? <a [routerLink]="['/registro']">Click aquí</a>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

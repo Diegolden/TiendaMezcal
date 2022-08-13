@@ -1,0 +1,24 @@
+<app-navbar *ngIf="user_id"></app-navbar>
+<app-nav *ngIf="!user_id"></app-nav>
+
+<!-- termina header -->
+<div class="container">
+    <div class="container">
+        <br>
+        <div class=" tp-3 text-center text-light">
+            <h4 class="productos_titulo">Productos</h4>
+            <br>
+        </div>
+
+        <div class="row">
+            <div class="card" *ngFor="let mezcal of mezcales">
+                <img src="{{mezcal.img}}" class="card-img-top" alt="agave" height="250px">
+                <div class="card-body">
+                    <h5 class="card-title">{{mezcal.nombre}}</h5>
+                    <p class="card-text">${{mezcal.precio}}</p>
+                    <button type="button" (click)="verMas(mezcal.id_mezcal)" class="botonsito btn btn-outline-primary">Ver más</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

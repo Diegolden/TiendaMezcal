@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+<br>
+<!-- termina header -->
+<div class="container">
+    <div class="row">
+        <div class="tabla col-lg-12">
+            <table class="table text-center pt-1 color">
+                <thead>
+                    <tr>
+                        <th class="fila-principal" scope="col"></th>
+                        <th class="fila-principal" scope="col">PRODUCTO</th>
+                        <th class="fila-principal" scope="col">PRECIO</th>
+                        <th class="fila-principal" scope="col">informacion</th>
+                        <th class="fila-principal" scope="col">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="filas" *ngFor="let mzcl of data" align="center">
+                        <th scope="row"><img class="imagen_mezcal" src="{{mzcl.img}}" height="80px"></th>
+                        <td class="fila_letras">{{mzcl.nombre}}</td>
+                        <td class="fila_letras">{{mzcl.precio}}</td>
+                        <td class="fila_letras">
+                        <button type="button" [routerLink]="['/producto/',mzcl.id_mezcal]" routerLinkActive="router-link-active"  class="botonsito btn btn-outline-success">Ver informacion</button></td>
+                        <td class="fila_letras"><button class="btn btn-danger" (click)="eliminar(mzcl.id_mezcal)">X</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+           
+             
+    
+    
+

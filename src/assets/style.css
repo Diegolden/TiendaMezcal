@@ -1,0 +1,53 @@
+/*======================
+  Google fonts
+========================*/
+
+body {
+    background-color: black!important;
+    overflow-x: hidden
+}
+
+
+/*=========Navar==========*/
+
+.navarsito {
+    background-color: black;
+    color: white!important;
+    font-family: 'Freckle Face', cursive;
+}
+
+
+/*=========Fin Navar==========*/
+
+.borde {
+    background-color: rgb(255, 255, 255)!important;
+    height: 8px;
+}
+
+.cuadro_principal {
+    /* background-image: url("../../assets/img/Mezcal_body.jpeg")!important;
+    background-repeat: no-repeat;
+    background-position-x: right; */
+    font-family: 'Freckle Face', cursive;
+    color: white;
+}
+
+.mezcal {
+    height: 40px;
+}
+
+.para {
+    padding-right: 30px;
+    font-size: 70px;
+    height: 70px;
+}
+
+.todos {
+    padding-right: 50px;
+    font-size: 100px;
+}
+
+.color {
+    font-family: 'Freckle Face', cursive;
+    color: white;
+}

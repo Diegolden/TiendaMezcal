@@ -1,0 +1,55 @@
+<app-navbar *ngIf="user_id"></app-navbar>
+<app-nav *ngIf="!user_id"></app-nav>
+
+<br>
+<div class="container">
+
+<div class="row">
+    <div class="col-6">
+        <img src="{{mezcal.img}}" class="card-img-top" alt="agave" width="250px">
+    </div>
+    <div class="col-6">
+        <div class="row color">
+            <div class="col-lg-8 position-absolute end-0">
+                <div class="informacion col-lg-9 position-absolute end-0 pt-5 p-4">
+                    <h1>{{mezcal.nombre}}</h1>
+
+                    <p>{{mezcal.descripcion}}</p>
+                    <div class="bordesito"></div>
+                    <div class="row">
+                        <div class="armonia-perfecta col-lg-6">
+                            <h3>Precio</h3>
+                            <h4>${{mezcal.precio}}.00 MXN</h4>
+
+                        </div>
+                        <div class="armonia-perfecta col-lg-6">
+                            <h3>Medida</h3>
+                            <h4>{{mezcal.medida.ml}} ml.</h4>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="tipo-agave col-lg-12">
+                            <h4><img src="assets/img/agavito.png"> TIPO DE AGAVE: {{mezcal.Tipomezcales.nombre}}</h4>
+                        </div>
+                    </div>
+                    <div class="row" *ngIf="user_id">
+                        <button type="button" (click)="agregarCarrito(mezcal.id_mezcal)" class="botonsito btn btn-outline-warning">Agregar al carrito</button>
+                    </div>
+                    <div class="row" *ngIf="!user_id">
+                        <button type="button" (click)="verificar(mezcal.id_mezcal)" class="botonsito btn btn-outline-warning">Agregar al carrito</button>
+                    </div>
+                    <div class="row" *ngIf="user_id">
+                        <button type="button" (click)="agregarFavorito(mezcal.id_mezcal)" class="botonsito btn btn-outline-warning">❤️</button>
+                    </div>
+                    <div class="row" *ngIf="!user_id">
+                        <button type="button" (click)="verificar2(mezcal.id_mezcal)" class="botonsito btn btn-outline-warning">❤️</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
